@@ -20,7 +20,7 @@ GAMMA = 0.99 # Discount factor for calculating return
 TARGET_REPLACE_ITER = 100 # for update the target network 
 MEMORY_CAPACITY = 1000000 # size of the data base 
 
-##--FOR EXPOLRATION--###
+##--FOR EXPLORATION--###
 EPSILON_START = 1.0    #
 EPSILON_END = 0.01     #
 EPSILON_DECAY = 0.995  #
