@@ -18,7 +18,7 @@ BATCH_SIZE = 64 # number of experiences (state, action, reward, next state) samp
 LR = 0.001 # learning rate 
 GAMMA = 0.99 # Discount factor for calculating return
 TARGET_REPLACE_ITER = 100 # for update the target network 
-MEMORY_CAPACITY = 1000000 # size of the data base 
+MEMORY_CAPACITY = 1000000 # size of the memory 
 
 ##--FOR EXPLORATION--###
 EPSILON_START = 1.0    #
