@@ -19,13 +19,6 @@ LR = 0.001 # learning rate
 GAMMA = 0.99 # Discount factor for calculating return
 TARGET_REPLACE_ITER = 100 # for update the target network 
 MEMORY_CAPACITY = 1000000 # size of the memory 
-
-##--FOR EXPLORATION--###
-EPSILON_START = 1.0    #
-EPSILON_END = 0.01     #
-EPSILON_DECAY = 0.995  #
-########################
-
 EPISODES = 1000 # number of episodes 
 MAX_STEPS = 200 # number of steps per episodes 
 
@@ -182,12 +175,20 @@ if __name__ == '__main__':
     plt.ion() 
     fig, ax = plt.subplots()
 
+    ##--FOR EXPLORATION--###
+    EPSILON_START = 1.0    #
+    EPSILON_END = 0.01     #
+    EPSILON_DECAY = 0.995  #
+    ########################
+
     for episode in range(EPISODES):
         state = env.reset()
         if isinstance(state, tuple):
             state = state[0]
         episode_reward = 0
         done = False
+
+        epsilon = max(EPSILON_END, epsilon * EPSILON_DECAY)
 
         for step in range(MAX_STEPS):
             env.render()
